@@ -12,7 +12,7 @@
         {
             "label": "iCE40 Power Stress Test",
             "type": "shell",
-            "command": "make ice40-power",
+            "command": "make ice40_power",
             "problemMatcher": [],
             "group": {
                 "kind": "build",

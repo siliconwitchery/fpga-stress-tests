@@ -19,46 +19,42 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-module top (
-    // Reset input on popout board
-    input logic D4,
+// This gives us a 500MHz clock
+`timescale 1ns / 1ns
+
+// Include the pseudorandom module
+`include "pseudorandom_ff.sv"
+
+module pseudorandom_ff_tb;
     
-    // LED on S1 popout
-    output logic D3
-);
-
-    // Assign the reset pin to a global net
-    logic reset;
-    assign reset = ~D4;
-
-    // Create a global oscillator net
-    logic osc;
-
-    // Configure internal HS oscillator as 6MHz
-    SB_HFOSC #(
-        .CLKHF_DIV("0b11")
-    ) hf_osc (
-        .CLKHFEN(1'b1), // enable
-        .CLKHFPU(1'b1), // power up
-        .CLKHF(osc)     // output to sysclk
-    ) /* synthesis ROUTE_THROUGH_FABRIC=0 */ ;
-
-    // TODO configure the PLLs to full speed
-    logic clk;
-    assign clk = osc;
-
-    // Toggle a lot og flip flops
-    always_ff @(posedge clk) begin
-
-        if (reset) begin
-            counter <= counter + 1;
-        end
-
-        else begin
-            counter <= 0;
-        end
-
+    // This is where the simulation output file is saved
+    initial begin
+        $dumpfile(".sim/pseudorandom_ff_tb.lxt");
+        $dumpvars(0, pseudorandom_ff_tb);  
     end
 
+    // Local clock, reset and dummy signals
+    logic clk = 1;
+    logic dummy;
+    logic [15:0] dummy_address;
+    logic [15:0] dummy_data;
+
+    // Generate a clock signal
+    initial begin
+        forever #1 clk <= ~clk;
+    end
+
+    // Connect the pseudorandom module with 32 LUTs
+    pseudorandom_ff #(
+        .NUM_CELLS(60)
+    ) pseudorandom_ff (
+        .*
+    );
+
+    // Run the simulation
+    initial begin
+        # 10000
+        $finish;
+    end
 
 endmodule

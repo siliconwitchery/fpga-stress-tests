@@ -1,16 +1,17 @@
-# Output build directory.
-OUT = .build
-
 clean:
-	rm -r .build
+	rm -r .build .sim
 
-ice40-power:
-	mkdir -p $(OUT)
-	iverilog -Wall -g2012 -o $(OUT)/ice40-power.out -i ice40-power.sv
-	yosys -p "synth_ice40 -json $(OUT)/ice40-power.json" ice40-power.sv
-	nextpnr-ice40 --up5k --package uwg30 -q --json $(OUT)/ice40-power.json --asc $(OUT)/ice40-power.asc --pcf s1.pcf
-	icepack $(OUT)/ice40-power.asc $(OUT)/ice40-power.bin
+ice40_power:
+	mkdir -p .build
+	iverilog -Wall -g2012 -o .build/ice40_power.out -i ice40/ice40_power.sv
+	yosys -p "synth_ice40 -json .build/ice40_power.json" ice40/ice40_power.sv
+	nextpnr-ice40 --up5k --package uwg30 --json .build/ice40_power.json --asc .build/ice40_power.asc --pcf ice40/s1.pcf
+	icepack .build/ice40_power.asc .build/ice40_power.bin
+	cd .build && xxd -i ice40_power.bin ice40_power.h
+	sed '1s/^/const /' .build/ice40_power.h > .build/ice40_power.h
 
-# Temporary conversion to header file
-	# cd $(OUT) && xxd -i ice40-power.bin ice40-power.h
-	# sed '1s/^/const /' $(OUT)/ice40-power.h > $(OUT)ice40-power.h
+sim_pseudorandom_ff:
+	mkdir -p .sim
+	iverilog -Wall -g2012 -o .sim/pseudorandom_ff_tb.out -i testbenches/pseudorandom_ff_tb.sv
+	vvp .sim/pseudorandom_ff_tb.out -lxt2
+	gtkwave .sim/pseudorandom_ff_tb.lxt testbenches/pseudorandom_ff_tb.gtkw

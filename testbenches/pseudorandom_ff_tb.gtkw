@@ -1,0 +1,65 @@
+[*]
+[*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
+[*] Sun May 22 19:44:49 2022
+[*]
+[dumpfile] "/Users/raj/projects/fpga-stress-tests/.sim/pseudorandom_ff_tb.lxt"
+[dumpfile_mtime] "Sun May 22 19:44:12 2022"
+[dumpfile_size] 134814
+[savefile] "/Users/raj/projects/fpga-stress-tests/testbenches/pseudorandom_ff_tb.gtkw"
+[timestart] 9849
+[size] 1440 792
+[pos] -1 -1
+*-4.990665 9962 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] pseudorandom_ff_tb.
+[sst_width] 193
+[signals_width] 268
+[sst_expanded] 1
+[sst_vpaned_height] 272
+@28
+pseudorandom_ff_tb.clk[0]
+@200
+-
+@28
+pseudorandom_ff_tb.pseudorandom_ff.dummy[0]
+@22
+pseudorandom_ff_tb.dummy_address[15:0]
+pseudorandom_ff_tb.dummy_data[15:0]
+@200
+-
+@28
+pseudorandom_ff_tb.pseudorandom_ff.\chain[0][0]
+@29
+pseudorandom_ff_tb.pseudorandom_ff.\chain[1][0]
+@28
+pseudorandom_ff_tb.pseudorandom_ff.\chain[2][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[3][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[4][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[5][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[6][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[7][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[8][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[9][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[10][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[11][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[12][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[13][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[14][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[15][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[16][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[17][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[18][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[19][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[20][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[21][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[22][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[23][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[24][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[25][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[26][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[27][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[28][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[29][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[30][0]
+pseudorandom_ff_tb.pseudorandom_ff.\chain[31][0]
+[pattern_trace] 1
+[pattern_trace] 0

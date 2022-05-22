@@ -14,7 +14,7 @@ This test drives all 5k LUTs, and RAM blocks of the iCE40 for maximum power cons
 
 To build run
 
-`make ice40-power`
+`make ice40_power`
 
 ---
 
@@ -26,4 +26,4 @@ This test drives all 17k gates and RAM blocks of the LIFCL-17 for maximum power 
 
 To build run
 
-`make lifcl-power`
+`make lifcl_power`
