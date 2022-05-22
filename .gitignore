@@ -1,0 +1,12 @@
+# macOS cache file
+.DS_Store
+
+# Don't include build output folders
+.build
+.sim
+
+# Don't keep local vscode settings
+.vscode/*
+
+# But keep the tasks file
+!.vscode/tasks.json
