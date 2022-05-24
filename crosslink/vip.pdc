@@ -19,16 +19,20 @@
 # PERFORMANCE OF THIS SOFTWARE.
 #
 
-set_io --warn-no-port D1    D5   # IOB_2a
-set_io --warn-no-port D2    F5   # IOB_3b
-set_io --warn-no-port D3    E5   # IOB_0a (LED)
-set_io --warn-no-port D4    E4   # IOB_9b (Button)
-set_io --warn-no-port D5    A1   # IOT_36b
-set_io --warn-no-port D6    A2   # IOT_37a
-set_io --warn-no-port D7    B3   # IOT_46b
-set_io --warn-no-port D8    A4   # IOT_47a
-set_io --warn-no-port SCK   D1   # IOB_34a
-set_io --warn-no-port CS    C1   # IOB_35b
-set_io --warn-no-port COPI  F1   # IOB_32a
-set_io --warn-no-port CIPO  E1   # IOB_33b
-set_io --warn-no-port INT   D3   # IOB_12a (Conf Done pin)
+# Main clock 27 MHz
+ldc_set_location -site {L5} [get_ports clk]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS18 PULLMODE=NONE} [get_ports clk]
+
+# Reset button on SW3
+ldc_set_location -site {G13} [get_ports reset_button]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports reset_button]
+
+# Debug leds
+ldc_set_location -site {G14} [get_ports {led[0]}]
+ldc_set_location -site {G15} [get_ports {led[1]}]
+ldc_set_location -site {L13} [get_ports {led[2]}]
+ldc_set_location -site {L14} [get_ports {led[3]}]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports {led[0]}]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports {led[1]}]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports {led[2]}]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33} [get_ports {led[3]}]

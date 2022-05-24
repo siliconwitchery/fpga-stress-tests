@@ -14,10 +14,22 @@
             "type": "shell",
             "command": "make ice40_power",
             "problemMatcher": [],
+        },
+        {
+            "label": "Crosslink-NX Power Stress Test",
+            "type": "shell",
+            "command": "make crosslink_power",
+            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Simulate Pseudorandom Module",
+            "type": "shell",
+            "command": "make sim_pseudorandom_ff",
+            "problemMatcher": [],
         }
     ]
 }

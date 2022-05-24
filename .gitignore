@@ -5,6 +5,9 @@
 .build
 .sim
 
+# Don't include vscode workspace files
+*.code-workspace
+
 # Don't keep local vscode settings
 .vscode/*
 
